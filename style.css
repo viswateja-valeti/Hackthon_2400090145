@@ -1,0 +1,294 @@
+/* Global base styles — minimal, won't interfere */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f7f9;
+  margin: 0; padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* App container used for login too, keep simple */
+#app {
+  width: 900px;
+  max-width: 95vw;
+  min-height: 600px;
+}
+
+/* --- LOGIN SCREEN styles --- */
+.login-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  padding: 40px 30px;
+  max-width: 400px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+/* inputs and buttons for login */
+input[type=email], input[type=password], input[type=text], select {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 6px 0 15px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  font-size: 1rem;
+}
+button.btn-primary {
+  background-color: #2d9cdb;
+  color: white;
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 6px;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button.btn-primary:hover {
+  background-color: #1b7fcc;
+}
+
+/* Error, hints, form groups */
+.error {
+  color: #d63447;
+  margin-bottom: 12px;
+}
+.hint {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #666;
+}
+.form-group {
+  margin-bottom: 12px;
+}
+
+/* --- DASHBOARDS (admin & user) --- */
+/* Scoped styles inside .dashboard only */
+
+.dashboard {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  padding: 25px 35px;
+  max-width: 900px;
+  margin: 20px auto;
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Nav */
+.dashboard nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e0e6f8;
+  padding-bottom: 12px;
+}
+.dashboard nav h2 {
+  font-size: 1.9rem;
+  color: #3c3c72;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.dashboard nav button {
+  background: #764ba2;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 5px 14px rgba(118, 75, 162, 0.5);
+  border: none;
+}
+.dashboard nav button:hover {
+  background: #5e3e9d;
+  box-shadow: 0 7px 20px rgba(94, 62, 157, 0.7);
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+/* Content section */
+.dashboard .content-section {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.left-panel, .right-panel {
+  flex: 1 1 45%;
+  background: #f9f9ff;
+  border-radius: 14px;
+  padding: 25px 30px;
+  box-shadow: inset 0 0 15px #e0e6f8;
+  max-height: 540px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-panel h3, .right-panel h3 {
+  font-size: 1.4rem;
+  color: #4a3d72;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #764ba2;
+  padding-bottom: 8px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  font-size: 0.95rem;
+  color: #444;
+}
+th {
+  background: #764ba2;
+  color: white;
+  padding: 12px 15px;
+  font-weight: 700;
+  text-align: left;
+  border-radius: 8px 8px 0 0;
+  letter-spacing: 0.03em;
+}
+tbody tr {
+  background: white;
+  box-shadow: 0 2px 5px rgba(118, 75, 162, 0.15);
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+}
+tbody tr:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(118, 75, 162, 0.3);
+}
+td {
+  padding: 12px 15px;
+  vertical-align: middle;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Buttons inside dashboard */
+button.btn-add {
+  background-color: #27ae60;
+  color: white;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  transition: background-color 0.25s ease;
+}
+button.btn-add:hover {
+  background-color: #1e8449;
+  box-shadow: 0 4px 10px rgba(30, 132, 73, 0.75);
+  cursor: pointer;
+}
+button.btn-remove {
+  background-color: #d63447;
+  color: white;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  transition: background-color 0.25s ease;
+}
+button.btn-remove:hover {
+  background-color: #a82a37;
+  box-shadow: 0 4px 10px rgba(168, 42, 55, 0.75);
+  cursor: pointer;
+}
+
+/* Admin form styling */
+.admin-form {
+  margin-top: 20px;
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(118, 75, 162, 0.15);
+}
+.admin-form label {
+  font-weight: 700;
+  color: #5e3e9d;
+  margin-bottom: 8px;
+  display: block;
+  font-size: 1rem;
+}
+.admin-form input[type=text],
+.admin-form input[type=number],
+.admin-form select {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1.5px solid #bfb8e8;
+  font-size: 1rem;
+  color: #4b3f72;
+  box-shadow: inset 2px 2px 6px #e6e2f8, inset -2px -2px 6px #fff;
+  font-weight: 600;
+  margin-bottom: 18px;
+  transition: border-color 0.3s ease;
+}
+.admin-form input[type=text]:focus,
+.admin-form input[type=number]:focus,
+.admin-form select:focus {
+  border-color: #764ba2;
+  outline: none;
+  box-shadow: 0 0 8px rgba(118, 75, 162, 0.6);
+}
+.admin-form button.btn-add {
+  width: 100%;
+  padding: 14px 0;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  box-shadow: 0 7px 20px rgba(39, 174, 96, 0.6);
+}
+
+/* Scrollbars only for dashboard panels */
+.left-panel::-webkit-scrollbar,
+.right-panel::-webkit-scrollbar {
+  width: 8px;
+}
+.left-panel::-webkit-scrollbar-thumb,
+.right-panel::-webkit-scrollbar-thumb {
+  background-color: #b3a9d8;
+  border-radius: 5px;
+}
+.left-panel::-webkit-scrollbar-track,
+.right-panel::-webkit-scrollbar-track {
+  background: #f0eff8;
+}
+
+/* Conflict message styling */
+.conflict-msg,
+#conflicts-list {
+  margin-top: 15px;
+  font-weight: 700;
+  color: #d63447;
+  font-size: 1.05rem;
+  line-height: 1.3;
+  min-height: 60px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .dashboard .content-section {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .left-panel, .right-panel {
+    max-height: none;
+    flex: 1 1 100%;
+  }
+}
